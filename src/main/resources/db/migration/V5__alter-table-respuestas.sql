@@ -1,0 +1,2 @@
+alter table respuestas add constraint fk_respuestas_autor foreign key (autor) references usuarios(id);
+alter table respuestas add constraint fk_respuestas_topico foreign key (topico) references topicos(id);
