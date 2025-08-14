@@ -14,8 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -39,6 +37,7 @@ public class TopicoController {
         var curso = cursoRepository.findByNombre(datosAgregarTopico.nombreCurso());
         Topico topico;
 
+        //Se verifica que tanto el autor (usuario) y el nombre del curso EXISTAN.
         if (autor.isPresent() && curso != null) {
             topico = new Topico(datosAgregarTopico, autor.get(), curso);
         } else {
