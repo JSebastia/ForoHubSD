@@ -35,6 +35,10 @@ public class Usuario implements UserDetails {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
+    public void actualizarContrasenia(String contrasenia){
+        this.contrasenia = contrasenia;
+    }
+
     @Override
     public String getPassword() {
         return contrasenia;

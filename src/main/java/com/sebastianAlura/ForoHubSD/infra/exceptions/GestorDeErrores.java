@@ -15,7 +15,7 @@ public class GestorDeErrores {
     //METODOS
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
     public ResponseEntity<DatosErrorTopicosDuplicadosDTO> tratarError400_escenarioDatosTopicosDuplicados() {
-        return ResponseEntity.badRequest().body(new DatosErrorTopicosDuplicadosDTO("Datos duplicados: el Titulo o el Mensaje del Topico, ya existen."));
+        return ResponseEntity.badRequest().body(new DatosErrorTopicosDuplicadosDTO("Datos duplicados"));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
